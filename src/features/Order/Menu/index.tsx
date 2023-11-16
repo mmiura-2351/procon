@@ -37,43 +37,45 @@ export const CategoryMenu = ({ menuData }: { menuData: MenuData }) => {
     <>
       <div className={`${styles["main-container"]}`}>
         <div className={`${styles["menu-container"]}`}>
-          {menuData.map((menu) => (
-            <>
-              <div key={menu.menuCategoryName} className={`${styles["category-container"]}`}>
-                <button
-                  className={`${styles["category-button"]} 
+          <div className={`${styles["tab-container"]}`}>
+            {menuData.map((menu) => (
+              <>
+                <div key={menu.menuCategoryName} className={`${styles["category-container"]}`}>
+                  <button
+                    className={`${styles["category-button"]}
                 ${menu.menuId === nowCategoryId ? styles["category-button-active"] : styles["category-button"]}`}
-                  onClick={() => handleSetNowCategory(menu.menuId)}
-                >
-                  <p className={`${styles["category-list"]}`}>{menu.menuCategoryName}</p>
-                </button>
-              </div>
-            </>
-          ))}
-          <div className={`${styles["utilities-container"]}`}>
-            <button className={`${styles["category-button"]}`} onClick={() => handleSetIsOpenedFilterModal()}>
-              <p className={`${styles["category-list"]}`}>フィルター</p>
-            </button>
-          </div>
-          <div className={`${styles["utilities-container"]}`}>
-            <button className={`${styles["category-button"]}`}>
-              <p className={`${styles["category-list"]}`}>注文履歴</p>
-            </button>
-          </div>
-          <div className={`${styles["utilities-container"]}`}>
-            <button className={`${styles["category-button"]}`}>
-              <p className={`${styles["category-list"]}`}>ログイン</p>
-            </button>
-          </div>
-          <div className={`${styles["utilities-container"]}`}>
-            <button className={`${styles["category-button"]}`}>
-              <p className={`${styles["category-list"]}`}>呼び出し</p>
-            </button>
-          </div>
-          <div className={`${styles["utilities-container"]}`}>
-            <button className={`${styles["category-button"]}`}>
-              <p className={`${styles["category-list"]}`}>会計</p>
-            </button>
+                    onClick={() => handleSetNowCategory(menu.menuId)}
+                  >
+                    <p className={`${styles["category-list"]}`}>{menu.menuCategoryName}</p>
+                  </button>
+                </div>
+              </>
+            ))}
+            <div className={`${styles["utilities-container"]}`}>
+              <button className={`${styles["category-button"]}`} onClick={() => handleSetIsOpenedFilterModal()}>
+                <p className={`${styles["category-list"]}`}>フィルター</p>
+              </button>
+            </div>
+            <div className={`${styles["utilities-container"]}`}>
+              <button className={`${styles["category-button"]}`}>
+                <p className={`${styles["category-list"]}`}>注文履歴</p>
+              </button>
+            </div>
+            <div className={`${styles["utilities-container"]}`}>
+              <button className={`${styles["category-button"]}`}>
+                <p className={`${styles["category-list"]}`}>ログイン</p>
+              </button>
+            </div>
+            <div className={`${styles["utilities-container"]}`}>
+              <button className={`${styles["category-button"]}`}>
+                <p className={`${styles["category-list"]}`}>呼び出し</p>
+              </button>
+            </div>
+            <div className={`${styles["utilities-container"]}`}>
+              <button className={`${styles["category-button"]}`}>
+                <p className={`${styles["category-list"]}`}>会計</p>
+              </button>
+            </div>
           </div>
 
           {menuData.map(
