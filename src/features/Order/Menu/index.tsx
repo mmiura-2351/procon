@@ -74,6 +74,7 @@ export const CategoryMenu = ({ menuData }: { menuData: MenuData }) => {
             <p className={`${styles["category-list"]}`}>会計</p>
           </button>
         </div>
+
         {menuData.map(
           (menu) =>
             nowCategoryId === menu.menuId && (
