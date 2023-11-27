@@ -74,8 +74,7 @@ export const AllergySetting = () => {
   // });
 
   const changeAllergyList = (target: string): void => {
-    setAllergyList({ ...allergyList, [target]: true });
-    console.log(target);
+    setAllergyList({ ...allergyList, [target]: !allergyList.wheat });
     console.log(allergyList);
   };
 
@@ -87,9 +86,16 @@ export const AllergySetting = () => {
     <>
       <h2>アレルギー設定</h2>
       <form method={"post"} onSubmit={handleSubmit}>
+        <h3></h3>
+        <br />
         <label>
           <input type="checkbox" id="allergy" onClick={() => changeAllergyList("wheat")}></input>
           小麦
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("soba")}></input>
+          そば
         </label>
         <br />
         <button type="submit">決定</button>
