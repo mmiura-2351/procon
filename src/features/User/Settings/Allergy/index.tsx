@@ -1,8 +1,7 @@
 import { useState } from "react";
+import { doAllergyRegistration } from "./doAllergyRegistration";
 
-const handleSubmit = () => {
-  // TODO:登録処理
-};
+
 
 export const AllergySetting = () => {
   const [allergyList, setAllergyList] = useState({
@@ -35,6 +34,11 @@ export const AllergySetting = () => {
     orange: false, //27
     mountainYam: false, //28
   });
+
+  const handleSubmit = () => {
+    // TODO:登録処理
+    void doAllergyRegistration(allergyList);
+  };
 
   const changeAllergyList = (target: string): void => {
     switch (target) {
