@@ -36,69 +36,242 @@ export const AllergySetting = () => {
     mountainYam: false, //28
   });
 
-  //残骸
-  // const [wheat, setWheat ] = useState("");
-  // const [soba, setSoba ] = useState("");
-  // const [soy, setSoy ] = useState("");
-  // const [sesame, setSesame ] = useState("");
-  // const [egg, setEgg ] = useState("");
-  // const [milk, setMilk ] = useState("");
-  // const [beef, setBeef ] = useState("");
-  // const [chicken, setChicken ] = useState("");
-  // const [pork, setPork ] = useState("");
-  // const [mackerel, setMackerel ] = useState("");
-  // const [crab, setCrab ] = useState("");
-  // const [shrimp, setShrimp ] = useState("");
-  // const [abalone, setAbalone ] = useState("");
-  // const [squid, setSquid ] = useState("");
-  // const [salmonRoe, setSalmonRoe ] = useState("");
-  // const [gelatin, setGelatin ] = useState("");
-  // const [salmon, setSalmon ] = useState("");
-  // const [cashewNuts, setCashewNuts ] = useState("");
-  // const [almond, setAlmond] = useState("");
-  // const [walnut, setWalnut ] = useState("");
-  // const [matsutake, setMatsutake ] = useState("");
-  // const [peanut, setPeanut ] = useState("");
-  // const [peaches, setPeaches ] = useState("");
-  // const [apple, setApple ] = useState("");
-  // const [banana, setBanana ] = useState("");
-  // const [kiwiFruit, setKiwiFruit ] = useState("");
-  // const [orange, setOrange ] = useState("");
-  // const [mountainYam, setMountainYam ] = useState("");
-
-  // const checkbox: HTMLInputElement = document.getElementById("allergy") as HTMLInputElement;
-  // checkbox.addEventListener("change", (event) => {
-  //   const target = event.target as HTMLInputElement;
-  //   setAllergyList({ ...allergyList, ["wheat"]: target.checked });
-  //   console.log(target.checked); // チェックの状態を表示（true: チェックあり, false: チェックなし）
-  // });
-
   const changeAllergyList = (target: string): void => {
-    setAllergyList({ ...allergyList, [target]: !allergyList.wheat });
-    console.log(allergyList);
+    switch (target) {
+      case "wheat":
+        setAllergyList({ ...allergyList, [target]: !allergyList.wheat });
+        break;
+      case "soba":
+        setAllergyList({ ...allergyList, [target]: !allergyList.soba });
+        break;
+      case "soy":
+        setAllergyList({ ...allergyList, [target]: !allergyList.soy });
+        break;
+      case "sesame":
+        setAllergyList({ ...allergyList, [target]: !allergyList.sesame });
+        break;
+      case "egg":
+        setAllergyList({ ...allergyList, [target]: !allergyList.egg });
+        break;
+      case "milk":
+        setAllergyList({ ...allergyList, [target]: !allergyList.milk });
+        break;
+      case "beef":
+        setAllergyList({ ...allergyList, [target]: !allergyList.beef });
+        break;
+      case "chicken":
+        setAllergyList({ ...allergyList, [target]: !allergyList.chicken });
+        break;
+      case "pork":
+        setAllergyList({ ...allergyList, [target]: !allergyList.pork });
+        break;
+      case "mackerel":
+        setAllergyList({ ...allergyList, [target]: !allergyList.mackerel });
+        break;
+      case "crab":
+        setAllergyList({ ...allergyList, [target]: !allergyList.crab });
+        break;
+      case "shrimp":
+        setAllergyList({ ...allergyList, [target]: !allergyList.shrimp });
+        break;
+      case "abalone":
+        setAllergyList({ ...allergyList, [target]: !allergyList.abalone });
+        break;
+      case "squid":
+        setAllergyList({ ...allergyList, [target]: !allergyList.squid });
+        break;
+      case "salmonRoe":
+        setAllergyList({ ...allergyList, [target]: !allergyList.salmonRoe });
+        break;
+      case "gelatin":
+        setAllergyList({ ...allergyList, [target]: !allergyList.gelatin });
+        break;
+      case "salmon":
+        setAllergyList({ ...allergyList, [target]: !allergyList.salmon });
+        break;
+      case "cashewNuts":
+        setAllergyList({ ...allergyList, [target]: !allergyList.cashewNuts });
+        break;
+      case "almond":
+        setAllergyList({ ...allergyList, [target]: !allergyList.almond });
+        break;
+      case "walnut":
+        setAllergyList({ ...allergyList, [target]: !allergyList.walnut });
+        break;
+      case "matsutake":
+        setAllergyList({ ...allergyList, [target]: !allergyList.matsutake });
+        break;
+      case "peanut":
+        setAllergyList({ ...allergyList, [target]: !allergyList.peanut });
+        break;
+      case "peaches":
+        setAllergyList({ ...allergyList, [target]: !allergyList.peaches });
+        break;
+      case "apple":
+        setAllergyList({ ...allergyList, [target]: !allergyList.apple });
+        break;
+      case "banana":
+        setAllergyList({ ...allergyList, [target]: !allergyList.banana });
+        break;
+      case "kiwiFruit":
+        setAllergyList({ ...allergyList, [target]: !allergyList.kiwiFruit });
+        break;
+      case "orange":
+        setAllergyList({ ...allergyList, [target]: !allergyList.orange });
+        break;
+      case "mountainYam":
+        setAllergyList({ ...allergyList, [target]: !allergyList.mountainYam });
+        break;
+    }
   };
-
-  // const handleBlur = (field: string): void => {
-  //   setAllergyList({ ...allergyList, [field]: true });
-  // };
 
   return (
     <>
       <h2>アレルギー設定</h2>
       <form method={"post"} onSubmit={handleSubmit}>
-        <h3></h3>
-        <br />
+        <h3>穀物類・ごま</h3>
         <label>
-          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("wheat")}></input>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("wheat")} />
           小麦
         </label>
         <br />
         <label>
-          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("soba")}></input>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("soba")} />
           そば
         </label>
         <br />
-        <button type="submit">決定</button>
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("soy")} />
+          大豆
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("sesame")} />
+          ごま
+        </label>
+        <br />
+        <h3>肉・卵・魚介類</h3>
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("egg")} />卵
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("milk")} />乳
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("beef")} />
+          牛肉
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("chicken")} />
+          鶏肉
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("pork")} />
+          豚肉
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("mackerel")} />
+          さば
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("crab")} />
+          かに
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("shrimp")} />
+          エビ
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("abalone")} />
+          アワビ
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("squid")} />
+          いか
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("salmonRoe")} />
+          いくら
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("gelatin")} />
+          ゼラチン
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("salmon")} />
+          サーモン
+        </label>
+        <br />
+        <h3>ナッツ類・キノコ類</h3>
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("cashewNuts")} />
+          カシューナッツ
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("almond")} />
+          アーモンド
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("walnut")} />
+          クルミ
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("matsutake")} />
+          まつたけ
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("peanut")} />
+          ピーナッツ
+        </label>
+        <br />
+        <h3>果物類・その他</h3>
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("peaches")} />
+          もも
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("apple")} />
+          りんご
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("banana")} />
+          バナナ
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("kiwiFruit")} />
+          キウイ
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("orange")} />
+          オレンジ
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="allergy" onClick={() => changeAllergyList("mountainYam")} />
+          やまいも
+        </label>
+        <br />
+        <button type="submit">登録</button>
       </form>
     </>
   );
