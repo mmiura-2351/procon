@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { doAllergyRegistration } from "./doAllergyRegistration";
 
-
-
 export const AllergySetting = () => {
   const [allergyList, setAllergyList] = useState({
     wheat: false, //1

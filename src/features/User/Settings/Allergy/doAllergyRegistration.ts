@@ -32,5 +32,5 @@ const [allergyList, setAllergyList] = useState({
 });
 
 export const doAllergyRegistration = async (allergyList: object) => {
-  
+  return true;
 };
